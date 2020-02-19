@@ -14,6 +14,9 @@ public class Collaborateur {
     private String id;
     private String name;
     private String adresse;
+    private int phoneNumber;
+    private Boolean available;
+    private String photoname;
     @DBRef
     private Service service;
 }
