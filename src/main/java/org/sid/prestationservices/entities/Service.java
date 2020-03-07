@@ -12,14 +12,15 @@ import java.util.Collection;
 
 @Document
 @Data
-@AllArgsConstructor @NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class Service {
     @Id
     private String id;
     private String name;
     private String photo;
     @DBRef
-    private Collection<Collaborateur> collaborateurs=new ArrayList<>();
+    private Collection<Collaborateur> collaborateurs = new ArrayList<>();
 
     @Override
     public String toString() {
