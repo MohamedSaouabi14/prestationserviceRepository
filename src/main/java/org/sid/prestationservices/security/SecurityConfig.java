@@ -27,16 +27,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         /*super.configure(http);*/
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/services/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/photoColl/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/collaborateurs/**").permitAll();
-        http.authorizeRequests().antMatchers("/services/**").hasAuthority("ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/services/**").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/photoColl/**").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/collaborateurs/**").permitAll();
+        http.authorizeRequests().antMatchers("/services/**", "/addcollaborateur/**").hasAuthority("ADMIN");
         http.authorizeRequests().antMatchers("/collaborateurs/**").hasAuthority("USER");
         http.authorizeRequests().anyRequest().authenticated();
         http.addFilterBefore(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
+
     @Bean
-    public BCryptPasswordEncoder getBCPE(){
+    public BCryptPasswordEncoder getBCPE() {
         return new BCryptPasswordEncoder();
     }
 }

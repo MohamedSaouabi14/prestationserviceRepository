@@ -1,8 +1,8 @@
 package org.sid.prestationservices.security;
 
 public interface SecurityParams {
-    public static final String JWT_HEADER_NAME="Authorization";
-    public static final String SECRET="mohamedsaouabi7@gmail.com";
-    public static final long EXPIRATION=10*24*3600;
-    public static final String HEADER_PREFIX="Bearer ";
+    String JWT_HEADER_NAME = "Authorization";
+    String SECRET = "mohamedsaouabi7@gmail.com";
+    long EXPIRATION = 10 * 24 * 3600;
+    String HEADER_PREFIX = "Bearer ";
 }

@@ -8,7 +8,9 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Collaborateur {
     @Id
     private String id;
@@ -16,7 +18,9 @@ public class Collaborateur {
     private String adresse;
     private int phoneNumber;
     private Boolean available;
+    private Boolean promotion;
     private String photoname;
     @DBRef
     private Service service;
+
 }
