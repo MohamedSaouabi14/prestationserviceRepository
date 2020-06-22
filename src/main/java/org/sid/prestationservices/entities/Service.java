@@ -18,7 +18,6 @@ public class Service {
     @Id
     private String id;
     private String name;
-    private String photo;
     @DBRef
     private Collection<Collaborateur> collaborateurs = new ArrayList<>();
 

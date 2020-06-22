@@ -31,7 +31,7 @@ public class PrestationServicesApplication {
             repositoryRestConfiguration.exposeIdsFor(Collaborateur.class, Service.class);
             Stream.of("S1 Service1", "S2 Service2").forEach(s -> {
                 // repositoryRestConfiguration.exposeIdsFor(Collaborateur.class,Service.class);
-                serviceRepository.save(new Service(s.split(" ")[0], s.split(" ")[1], null, new ArrayList<>()));
+                serviceRepository.save(new Service(s.split(" ")[0], s.split(" ")[1], new ArrayList<>()));
             });
             serviceRepository.findAll().forEach(System.out::println);
 
